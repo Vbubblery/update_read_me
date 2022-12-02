@@ -1,12 +1,5 @@
-Hello {{ .name }}
-Hello {{ .name }}
-Hello {{ .name }}
-Hello {{ .name }}
-Hello {{ .name }}
-Hello {{ .name }}
+production: {{ production_version }}
+preprod: {{ preprod_version }}
+dev: {{ dev_version }}
 ---
-Hello {{ .name }}
-Hello {{ .name }}
-Hello {{ .name }}
-Hello {{ .name }}
-Hello {{ .name }}
+hello
