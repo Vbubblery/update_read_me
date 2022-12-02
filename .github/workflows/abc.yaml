@@ -1,0 +1,26 @@
+name: Push commit to protected branch
+
+on:
+  workflow_dispatch:
+
+jobs:
+  push_commit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        # Checkout the protected branch
+        ref: protected-branch
+
+    - run: |
+        # Make changes to the code in your repository
+        echo "This is my new commit" > file.txt
+
+        # Stage the changes
+        git add file.txt
+
+        # Commit the changes
+        git commit -m "Add new commit"
+
+        # Push the commit to the protected branch
+        git push --force
