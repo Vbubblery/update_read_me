@@ -1,3 +1,1 @@
-{{- range $val := .}}
-| {{$val.name}}
-{{- end}}
+Hello {{ .name }}
