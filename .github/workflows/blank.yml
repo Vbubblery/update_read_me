@@ -24,15 +24,16 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - name: Render template
-        id: render_template
-        uses: chuhlomin/render-template@v1.6
+      - name: Setup nginx
+        uses: cuchi/jinja2-action@v1.2.0
         with:
           template: README.tpl
-          vars: |
-            name: bubble
-      - name: output
-        run: echo "${{ steps.render_template.outputs.result }}" > README.md
+          output_file: README.md
+          strict: true
+          variables: |
+            production_version=0.0.1
+            preprod_version=0.0.2
+            dev_version=0.0.4
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: readme update
