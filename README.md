@@ -3,9 +3,3 @@
 - dev: 0.0.4
 ---
 hello
-| :exclamation:  This is very important   |
-|-----------------------------------------|
-
-
-| :zap:        Ignore at your own risk!   |
-|-----------------------------------------|
