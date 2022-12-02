@@ -24,9 +24,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - name: Update readme
-        uses: linuxsuren/yaml-readme@v0.0.6
-        env:
-          GH_TOKEN: ${{ secrets.GH_SECRETS }}
+      - name: Render template
+        id: render_template
+        uses: chuhlomin/render-template@v1.6
         with:
-          name: linuxsuren
+          template: README.tpl
+          vars: |
+            name: bubble
+      - name: output
+        run: echo '${{ steps.render_template.outputs.result }}'
