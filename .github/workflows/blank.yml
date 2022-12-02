@@ -32,7 +32,7 @@ jobs:
           vars: |
             name: bubble
       - name: output
-        run: echo ${{ steps.render_template.outputs.result }} > README.md
+        run: echo "${{ steps.render_template.outputs.result }}" > README.md
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: readme update
