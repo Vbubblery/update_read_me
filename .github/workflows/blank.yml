@@ -24,6 +24,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+        with:
+          token: e36bc8dd053115a82578c9ad30efc0717f9736bd
       - name: Setup nginx
         uses: cuchi/jinja2-action@v1.2.0
         with:
