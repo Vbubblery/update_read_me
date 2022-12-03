@@ -22,15 +22,16 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: tibdex/github-app-token@v1
-        id: generate-token
-        with:
-          app_id: "268462"
-          private_key: ${{ secrets.abc }}
+      # - uses: tibdex/github-app-token@v1
+      #   id: generate-token
+      #   with:
+      #     app_id: "268462"
+      #     private_key: ${{ secrets.abc }}
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
         with:
-          token: ${{ steps.generate-token.outputs.token }}
+          token: "caa70b6213da70f809b00211da24a2d1d16dcab8"
+          # token: ${{ steps.generate-token.outputs.token }}
       - name: Setup nginx
         uses: cuchi/jinja2-action@v1.2.0
         with:
