@@ -9,4 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: print
-        run: echo "${github.ref#refs/tags/}"
+        run: echo "${{ github.ref }}"
+      - name: print2
+        run: echo "${GITHUB_REF#refs/tags/}"
