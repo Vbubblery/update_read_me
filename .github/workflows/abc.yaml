@@ -3,13 +3,10 @@ name: Push commit to protected branch
 on:
   workflow_dispatch:
 
-run-name: wkmdknf
-
 jobs:
-  push_commit:
+  deployment:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-      with:
-        # Checkout the protected branch
-        ref: main
+      - uses: actions/checkout@v2
+      - name: print
+        run: echo "${{ github.ref }}"
