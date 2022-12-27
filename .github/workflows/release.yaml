@@ -19,6 +19,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          branch: '${{ github.ref_name}}.x'
+          branch: '${GITHUB_REF%.*}.x'
           sha: '${{ github.event.pull_request.head.sha }}'
      
