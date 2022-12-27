@@ -3,8 +3,8 @@ name: Push commit to protected branch
 on:
   workflow_dispatch:
 
-secrets:
-  tag: ${GITHUB_REF#refs/tags/}
+env:
+  TAG: ${GITHUB_REF#refs/tags/}
 
 jobs:
   deployment:
@@ -16,4 +16,4 @@ jobs:
       - name: print2
         run: echo "${GITHUB_REF#refs/tags/}"
       - name: print3
-        run: echo ${{ secrets.tag }}
+        run: echo $TAG
